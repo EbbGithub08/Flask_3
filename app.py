@@ -13,6 +13,21 @@ def index():
         <li><a href="/jobb">Jobb</a></li>
     </ul>
     '''
+@app.route('/navn')
+def navn():
+    return 'Navn: Johan'
+
+@app.route('/alder')
+def alder():
+    return 'Alder: 25'
+    
+@app.route('/bosted')
+def bosted():
+    return 'Bosted: Oslo'
+
+@app.route('/jobb')
+def jobb():
+    return 'Jobb: Programmer'
 
 if __name__ == '__main__':
     app.run()
