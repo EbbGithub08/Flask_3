@@ -1,18 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return '''
-    <h1>Her er litt info om meg</h1>
-    <ul>
-        <li><a href="/navn">Navn</a></li>
-        <li><a href="/alder">Alder</a></li>
-        <li><a href="/bosted">Bosted</a></li>
-        <li><a href="/jobb">Jobb</a></li>
-    </ul>
-    '''
+    return render_template('index.html')
+
 @app.route('/navn')
 def navn():
     return 'Navn: Johan'
@@ -20,7 +13,7 @@ def navn():
 @app.route('/alder')
 def alder():
     return 'Alder: 25'
-    
+
 @app.route('/bosted')
 def bosted():
     return 'Bosted: Oslo'
